@@ -53,13 +53,17 @@ table {
   text-align: center;
 }
 
-.btn {
+.add-book {
+  display: block;
   margin: 20px auto;
   width: 90px;
   background: rgb(201, 86, 86);
   text-align: center;
   padding: 10px 5px;
+  border: none;
+  border-radius: 10px;
 }
+
 
 .library {
   margin: 0 auto;
@@ -79,3 +83,7 @@ table {
   justify-content: space-around;
 }
 
+.book-form {
+  margin: 0 auto;
+  width: 80%;
+}
