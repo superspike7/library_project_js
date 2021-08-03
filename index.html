@@ -5,20 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="tailwind.css">
-  <script src="index.js"></script>
   <title>Document</title>
 </head>
 <body>
 
-  <div class="heading">
-    <h1>Library</h1>
+  <div class="text-5xl text-center pt-2">
+    Library
   </div> 
 
-  <button class="bg-blue-400 rounded text-white py-2 px-4 " id="book-btn">book</button>
+  <button class="bg-blue-400 rounded text-white py-2 px-4 mx-auto block mt-10" id="book-btn">add book</button>
 
 
 
-  <div class="w-full max-w-xs mx-auto" id="book-form">
+  <div class="w-full max-w-xs mx-auto hidden" id="book-form">
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
@@ -55,5 +54,6 @@
     </div>
 
   </div>
+  <script src="app.js"></script>
 </body>
 </html>
