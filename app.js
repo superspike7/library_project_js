@@ -19,12 +19,7 @@ function showBooksFromLibrary() {
 }
 
 const hideShow = () => {
-  
-  if (bookForm.style.display === "none") {
-    bookForm.style.display = "block";
-  } else {
-    bookForm.style.display = "none";
-  }
+  bookForm.classList.toggle("hidden")
 }
 
 
