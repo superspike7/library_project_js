@@ -2,6 +2,7 @@ let myLibrary = [];
 
 const addBtn = document.querySelector('#book-btn');
 const bookForm = document.querySelector('#book-form'); 
+const formBtn = document.querySelector('#form-button');
 
 function Book(title, author, pages) {
   this.title = title
@@ -10,8 +11,20 @@ function Book(title, author, pages) {
   this.read = false
 }
 
-function addBookToLibrary(book) {
-  myLibrary.push(book)
+function addBookToLibrary() {
+  let title = document.querySelector('#title').value;
+  let author = document.querySelector('#author').value;
+  let pages = document.querySelector('#pages').value;
+  let book = new Book(title, author, pages);
+
+  myLibrary.push(book);
+  clearForm();
+}
+
+function clearForm() {
+  document.querySelector('#title').value = '';
+  document.querySelector('#author').value = '';
+  document.querySelector('#pages').value = '';
 }
 
 function showBooksFromLibrary() {
@@ -25,3 +38,4 @@ const hideShow = () => {
 
 
 addBtn.addEventListener('click', hideShow);
+formBtn.addEventListener('click', addBookToLibrary);
