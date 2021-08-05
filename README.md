@@ -1,6 +1,6 @@
 # Book Library Javascript Project
 
-  -[Live Demo](https://github.com/superspike7/library_project_js)
+  -[Live Demo](https://superspike7.github.io/library_project_js/)
 
 ## Assignment
 
