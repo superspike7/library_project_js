@@ -68,14 +68,16 @@ const removeBookFromLibrary = e => {
   };
 };
 
-// const toggleRead = e => {
-//   if(e.target && e.target.matches("div#read-btn")) {
-//     let bookTitle = e.target.parentNode.firstElementChild.textContent;
+const toggleRead = e => {
+  if(e.target && e.target.matches("div#read-btn")) {
+    let targetBookId = e.target.parentNode.firstElementChild.textContent;
 
+    // directly change the myLibrary Array
+    myLibrary[`${Number(targetBookId) - 1}`].read = myLibrary[`${Number(targetBookId) - 1}`].read ? false : true;
 
-//     console.log(bookread);
-//   };
-// };
+    showBooksFromLibrary();
+  };
+};
 
 
 const hideShow = () => {
@@ -88,7 +90,7 @@ addBtn.addEventListener('click', hideShow);
 formBtn.addEventListener('click', addBookToLibrary);
 
 bookShelf.addEventListener('click', removeBookFromLibrary);
-// bookShelf.addEventListener('click', toggleRead);
+bookShelf.addEventListener('click', toggleRead);
 
 // seed book
 let test = new Book('Example', 'John Doe', 1);
