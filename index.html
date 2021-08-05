@@ -40,7 +40,7 @@
       <div class="flex items-center justify-busernameetween">
         <button id="form-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
           Add Book
-        </button>
+        </button>;
       </div>
     </form>
     </p>
@@ -49,10 +49,12 @@
   <div class="container max-w-screen-md grid gap-4 grid-cols-4 mx-auto my-5 p-3 bg-yellow-200 shadow-md rounded-md" id="bookshelf">
 
     <div id="book" class="relative bg-blue-100 rounded shadow-lg h-40 text-center p-1 flex flex-col justify-around">
+      <span class="hidden" id="read">false</span>
       <h1 class="text-2xl font-bold">Title</h1>
       <p class="text-md">Author Author</p>
       <p class="text-md">Pages: 69</p>
-      <button class="absolute left-1 top-1 bg-red-500 rounded-md text-white block" id="remove-btn" >remove</button>
+      <div class="bg-red-500 h-6 w-20 text-white rounded-lg mx-auto cursor-pointer" id="read-btn">read</div>
+      <button class="absolute left-1 top-1 bg-red-500 rounded-md text-white block" id="remove-btn">remove</button>
     </div>
 
   </div>
