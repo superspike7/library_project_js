@@ -6,16 +6,19 @@ const formBtn = document.querySelector('#form-button');
 const bookShelf = document.querySelector('#bookshelf');
 const readBtn = document.querySelector('#read-btn');
 
-let bookId = 1;
+class Book {
 
-function Book(title, author, pages) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = false
-  this.id = bookId
+  static bookId = 0;
 
-  bookId++;
+  constructor(title, author, pages){
+    this.id = Book.bookId;
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = false;
+    Book.bookId++;
+  }
+
 }
 
 function addBookToLibrary() {
@@ -73,7 +76,7 @@ const toggleRead = e => {
     let targetBookId = e.target.parentNode.firstElementChild.textContent;
 
     // directly change the myLibrary Array
-    myLibrary[`${Number(targetBookId) - 1}`].read = myLibrary[`${Number(targetBookId) - 1}`].read ? false : true;
+    myLibrary[`${Number(targetBookId)}`].read = myLibrary[`${Number(targetBookId)}`].read ? false : true;
 
     showBooksFromLibrary();
   };
