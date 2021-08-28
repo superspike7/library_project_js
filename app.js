@@ -20,14 +20,23 @@ class Book {
 }
 
 function addBookToLibrary() {
-  let title = document.querySelector("#title").value;
-  let author = document.querySelector("#author").value;
-  let pages = document.querySelector("#pages").value;
-  let book = new Book(title, author, pages);
+  var inputs = [...document.querySelectorAll("input")];
+  if (inputs.every((input) => input.validity.valid)) {
+    let title = document.querySelector("#title").value;
+    let author = document.querySelector("#author").value;
+    let pages = document.querySelector("#pages").value;
 
-  myLibrary.push(book);
-  clearForm();
-  showBooksFromLibrary();
+    let book = new Book(title, author, pages);
+
+    myLibrary.push(book);
+    clearForm();
+    bookForm.classList.toggle("hidden");
+    showBooksFromLibrary();
+    document.querySelector(".error").textContent = "";
+  } else {
+    document.querySelector(".error").textContent =
+      "please fill all the inputs to add book";
+  }
 }
 
 function clearForm() {
